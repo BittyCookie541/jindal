@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0c0b0a;
+    color: #f4f4f5;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom cursor hide default cursor on interactive elements when custom cursor is active */
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
+/* Glassmorphism panels */
+.glass-panel {
+  background: rgba(18, 17, 15, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(20, 18, 16, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Glowing text & borders */
+.text-glow-orange {
+  text-shadow: 0 0 24px rgba(255, 122, 0, 0.45);
+}
+
+.border-glow-orange {
+  box-shadow: 0 0 25px -4px rgba(255, 122, 0, 0.3);
+}
+
+/* Shimmer ray animation across progress bars & badges */
+@keyframes shimmer-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-slide 2.8s infinite ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0b0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #25221e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a00;
+}
